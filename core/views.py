@@ -7,6 +7,7 @@ from utils.telegram import send_telegram_message
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from core.tasks import send_telegram_message_async
 
 class JobApplicationViewSet(viewsets.ModelViewSet):
     queryset = JobApplication.objects.all()
@@ -18,8 +19,7 @@ class JobApplicationViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         instance = serializer.save(user=self.request.user)
-        send_telegram_message(f"📌 New Job Added:\n{instance.position} at {instance.company_name}")
-        
+        send_telegram_message_async.delay(f"📌 New Job Added: {instance.position} at {instance.company_name}")
 
 
 @api_view(['GET'])
