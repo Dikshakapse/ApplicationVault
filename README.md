@@ -49,21 +49,25 @@ Start Redis Server
 
 Start Celery Worker
 celery -A applicationvault_main worker --pool=solo -l info
-API Testing (Postman)
-Endpoint	                       Method	  Auth	 Description
-/api/v1/auth/registration/	     POST	    No	 User registration
-/api/v1/auth/login/	             POST		  No   Login and get tokens
-/api/public-info/	               GET	    No	 Public API
-/api/user-dashboard/	           GET	    Yes	 Private API
-/api/applications/	             GET/POST	Yes	 CRUD for job applications
-/api/test-telegram/	             GET	    No	 Test bot message
+
+## 📮 API Testing (Postman)
+
+| Endpoint                       | Method    | Auth | Description                          |
+|-------------------------------|------------|------|---------------------------------------|
+| `/api/v1/auth/registration/`  | POST       | No   | Register a new user                   |
+| `/api/v1/auth/login/`         | POST       | No   | Login and receive JWT tokens          |
+| `/api/public-info/`           | GET        | No   | Public endpoint (no auth needed)      |
+| `/api/user-dashboard/`        | GET        | Yes  | Private user dashboard                |
+| `/api/applications/`          | GET/POST   | Yes  | CRUD operations on job applications   |
+| `/api/test-telegram/`         | GET        | No   | Sends a test message via Telegram bot |
 
  Telegram Bot
 After registering, start your bot on Telegram using /start
 
 You'll receive messages when new job applications are created
 
- Tech Stack
+Tech Stacks:
+
 Django 5.2.3
 Django REST Framework
 JWT Auth (SimpleJWT)
