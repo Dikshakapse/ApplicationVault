@@ -34,13 +34,13 @@ Replace the placeholder values in .env with your actual values:
 
 ##  Environment Variables
 
-| Key                | Description                                        |
-|--------------------|----------------------------------------------------|
+| Key                 | Description                                        |
+|---------------------|----------------------------------------------------|
 | `SECRET_KEY`        | Django secret key                                  |
 | `DEBUG`             | Set to `False` in production                       |
 | `ALLOWED_HOSTS`     | Comma-separated list, e.g. `127.0.0.1,localhost`   |
 | `TELEGRAM_BOT_TOKEN`| Your Telegram bot token                            |
-| `TELEGRAM_CHAT_ID`  | Your personal chat ID (retrieved after `/start`)  |
+| `TELEGRAM_CHAT_ID`  | Your personal chat ID (retrieved after `/start`)   |
 
 
 ▶ Running the Project
