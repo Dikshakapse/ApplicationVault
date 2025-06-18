@@ -32,12 +32,16 @@ cp .env.example .env
 
 Replace the placeholder values in .env with your actual values:
 
-Key           	    Description
-SECRET_KEY	        Django secret key
-DEBUG	              Set to False in production
-ALLOWED_HOSTS	      e.g. 127.0.0.1,localhost
-TELEGRAM_BOT_TOKEN	Your Telegram bot token
-TELEGRAM_CHAT_ID  	Your personal chat ID (after /start)
+##  Environment Variables
+
+| Key                | Description                                        |
+|--------------------|----------------------------------------------------|
+| `SECRET_KEY`        | Django secret key                                  |
+| `DEBUG`             | Set to `False` in production                       |
+| `ALLOWED_HOSTS`     | Comma-separated list, e.g. `127.0.0.1,localhost`   |
+| `TELEGRAM_BOT_TOKEN`| Your Telegram bot token                            |
+| `TELEGRAM_CHAT_ID`  | Your personal chat ID (retrieved after `/start`)  |
+
 
 ▶ Running the Project
 Start the Django Server
@@ -50,7 +54,7 @@ Start Redis Server
 Start Celery Worker
 celery -A applicationvault_main worker --pool=solo -l info
 
-## 📮 API Testing (Postman)
+##  API Testing (Postman)
 
 | Endpoint                       | Method    | Auth | Description                          |
 |-------------------------------|------------|------|---------------------------------------|
